@@ -7,7 +7,7 @@ green="\033[0;32m"
 dir=$(pwd)
 
 # Checking package
-obfs=/storage/emulated/0/Download
+obfs=/data/data/com.termux/files/usr/bin/bash-obfuscate
 if [ ! -f "$obfs" ]; then
 	sleep 0.5
 	echo -e "${red}Obfuscate package not found!"
@@ -17,7 +17,7 @@ if [ ! -f "$obfs" ]; then
 	apt update
 	apt upgrade -y
 	apt install nodejs -y
-	npm -g install Download
+	npm -g install bash-obfuscate
 fi
 
 # Banner
@@ -66,6 +66,38 @@ else
 
 fi
 }
+
+# Input Output File
+File(){
+read -p $'\n * Input file: ' file
+sleep 0.1
+read -p $' * Save as: ' out
+}
+
+# Encode
+Enc(){
+sleep 1
+echo -e " * Encrypting..."
+bash-obfuscate $dir/$file -o $dir/$out
+echo -e " ✓ Saved: ${green}$out${plain}\n"
+}
+
+# Decode
+Dec(){
+sleep 1
+echo -e " * Decrypting..."
+if [ ! -d "$dir/.tmp" ]; then
+	mkdir $dir/.tmp
+fi
+cp -f $dir/$file $dir/.tmp/$out.tmp
+sed -i 's/eval/echo/g' $dir/.tmp/$out.tmp
+dec=$(bash $dir/.tmp/$out.tmp)
+echo -e "$dec" >> $dir/$out
+echo -e " ✓ Saved: ${green}$out${plain}\n"
+rm -rf .tmp
+}
+
+Menu}
 
 # Input Output File
 File(){
