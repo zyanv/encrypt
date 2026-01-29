@@ -10,6 +10,8 @@ dir=$(pwd)
 obfs=/data/data/com.termux/files/usr/bin/bash-obfuscate
 if [ ! -f "$obfs" ]; then
 	sleep 0.5
+	echo -e "${red}Obfuscate package not found!"
+	sleep 1
 	echo -e "${plain}Installing Package..."
 	sleep 1
 	apt update
@@ -79,38 +81,6 @@ Enc(){
 sleep 1
 echo -e " * Encrypting..."
 bash-obfuscate $dir/$file -o $dir/$out
-echo -e " ✓ Saved: ${green}$out${plain}\n"
-}
-
-# Decode
-Dec(){
-sleep 1
-echo -e " * Decrypting..."
-if [ ! -d "$dir/.tmp" ]; then
-	mkdir $dir/.tmp
-fi
-cp -f $dir/$file $dir/.tmp/$out.tmp
-sed -i 's/eval/echo/g' $dir/.tmp/$out.tmp
-dec=$(bash $dir/.tmp/$out.tmp)
-echo -e "$dec" >> $dir/$out
-echo -e " ✓ Saved: ${green}$out${plain}\n"
-rm -rf .tmp
-}
-
-Menu}
-
-# Input Output File
-File(){
-read -p $'\n * Input file: ' file
-sleep 0.1
-read -p $' * Save as: ' out
-}
-
-# Encode
-Enc(){
-sleep 1
-echo -e " * Encrypting..."
-Download $dir/$file -o $dir/$out
 echo -e " ✓ Saved: ${green}$out${plain}\n"
 }
 
