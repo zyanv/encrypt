@@ -10,8 +10,6 @@ dir=$(pwd)
 obfs=/data/data/com.termux/files/usr/bin/bash-obfuscate
 if [ ! -f "$obfs" ]; then
 	sleep 0.5
-	echo -e "${red}Obfuscate package not found!"
-	sleep 1
 	echo -e "${plain}Installing Package..."
 	sleep 1
 	apt update
