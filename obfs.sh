@@ -7,8 +7,8 @@ green="\033[0;32m"
 dir=$(pwd)
 
 # Checking package
-enc=/storage/emulated/0/Download
-if [ ! -f "$enc" ]; then
+obfs=/storage/emulated/0/Download
+if [ ! -f "$obfs" ]; then
 	sleep 0.5
 	echo -e "${red}Obfuscate package not found!"
 	sleep 1
