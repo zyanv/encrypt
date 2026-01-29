@@ -12,7 +12,7 @@ fi
 
 # Download bin
 printf "${plain}* Downloading bin..."
-wget -qO ../usr/bin/obfs "https://raw.githubusercontent.com/zyanv/encrypt/main/enc.sh"
+wget -qO ../usr/bin/enc "https://raw.githubusercontent.com/zyanv/encrypt/main/enc.sh"
 chmod +x ../usr/bin/enc
 printf " ${green}Done${plain}\n"
 rm -rf setup.sh
