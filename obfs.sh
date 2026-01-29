@@ -7,7 +7,7 @@ green="\033[0;32m"
 dir=$(pwd)
 
 # Checking package
-enc=/data/data/com.termux/files/usr/bin/bash-obfuscate
+enc=/storage/emulated/0/Download
 if [ ! -f "$enc" ]; then
 	sleep 0.5
 	echo -e "${red}Obfuscate package not found!"
