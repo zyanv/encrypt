@@ -19,7 +19,6 @@ if [ ! -f "$obfs" ]; then
 	apt install nodejs -y
 	npm -g install bash-obfuscate
 	termux-setup-storage
-	cd /storage/emulated/0/Download
 fi
 
 # Banner
