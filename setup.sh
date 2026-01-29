@@ -12,8 +12,8 @@ fi
 
 # Download bin
 printf "${plain}* Downloading bin..."
-wget -qO ../usr/bin/enc "https://raw.githubusercontent.com/zyanv/encrypt/main/enc.sh"
-chmod +x ../usr/bin/enc
+wget -qO ../usr/bin/obfs "https://raw.githubusercontent.com/zyanv/encrypt/main/obfs.sh"
+chmod +x ../usr/bin/obfs
 printf " ${green}Done${plain}\n"
 rm -rf setup.sh
-echo -e "${plain}* Type ${green}enc ${plain}to run the command."
+echo -e "${plain}* Type ${green}obfs ${plain}to run the command."
