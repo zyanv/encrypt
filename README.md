@@ -12,7 +12,8 @@ wget -q https://raw.githubusercontent.com/JinGGoVpn/DATA/main/script/enc/setup-e
 - Decrypt shell script
 
 # Commands
-- obfs = Tools menu
+- obfs = Tools Menu
+- enc = Tools Menu
 
 Credits: [ZYANV]
 (https://t.me/ZyanV)
